@@ -1,0 +1,40 @@
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+#include <iostream>
+
+#include"Player.hpp"
+#include"map.hpp"
+#include "menu.hpp"
+
+class Game
+{
+private:
+    sf::RenderWindow window;
+    sf::Event ev;
+
+    Player* player;
+    Map* map;
+    Menu* menu;
+  bool menu6 = false;
+  void initWindow();
+  void initMap();
+  void initMenu();
+  void initPlayer();
+  
+public:
+  bool menu5 = true;
+    Game();
+  virtual ~Game();
+
+    //Fonctions
+    void updatePlayer();
+    void updateCollision();
+    void update();
+    void renderPlayer();
+    void renderMap();
+    void renderMenu();
+    void render();
+  
+    const sf::RenderWindow& getWindow() const;
+  
+};
